@@ -1,14 +1,14 @@
 El matamoscas (2020)
 ---
-Valeria vive en un mundo perfecto, Júlia vive en un cuento de hadas, Anna es trabajadora y buena niña y a la mujer del vestido rojo le da igual todo lo que pasa en esta sociedad.
+<i>Valeria vive en un mundo perfecto, Júlia vive en un cuento de hadas, Anna es trabajadora y buena niña y a la mujer del vestido rojo le da igual todo lo que pasa en esta sociedad.</i>
 <br><br>
 Pero, ¿qué pasaría si un día todas estas chicas se encontraran ante un asesinato? Valeria ya no viviría en un mundo perfecto, Júlia huiría de la novela de terror, Anna sería una vagabunda sin trabajo y la mujer del vestido rojo se vería afectada por culpa de una sociedad enferma.
 
 <br> <br>
 <b>Ficha técnica:</b>
 <br>
-Compañía: Chiti y las demás
-Dirección: Valeria Pisati
+Compañía: Chiti y las demás <br>
+Dirección: Valeria Pisati <br>
 Interpretación: Pau Jimfer, Jordi Hanley, Tatiana Dunyó, Francesco Sinopoli, Ismael Sanpere, Noèlia Fajardo
 
 ---
@@ -16,4 +16,4 @@ Escenografía, Iluminación
 ---
 https://i.imgur.com/cCu4LLD.jpeg
 ---
-lematamoscas.html
+matamoscas.html

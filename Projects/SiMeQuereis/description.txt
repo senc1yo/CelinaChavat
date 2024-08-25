@@ -4,6 +4,6 @@ Peça de creació col·lectiva de segon d’escenografia a l’Institut del Teat
 ---
 Escenografía, Iluminación
 ---
-thumbnail url (gets injected into your landing page) 
+https://i.imgur.com/JI2mXMf.jpeg 
 ---
 simequereis.html
