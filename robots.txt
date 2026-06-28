@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://celinachavat.art/sitemap.xml

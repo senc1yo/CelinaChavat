@@ -1,0 +1,277 @@
+:root {
+    --color-bg: #e4ebe0;
+    --color-card: #f5f8f3;
+    --color-ink: #2f3d32;
+    --color-muted: #627066;
+    --color-line: #b8c8b4;
+    --color-accent: #5f8568;
+    --color-shadow: rgba(52, 68, 58, 0.08);
+    --color-shadow-deep: rgba(52, 68, 58, 0.04);
+    --color-outline: rgba(52, 68, 58, 0.2);
+    --color-pin-light: #c8e0c0;
+    --color-pin: #8fb88a;
+    --color-pin-dark: #6a9470;
+    --color-pin-right-light: #b8d4b0;
+    --color-pin-right: #7fa882;
+    --color-pin-right-dark: #5f8568;
+    --font-display: "Kalam", cursive;
+    --font-body: "Nunito Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--color-ink);
+    background-color: var(--color-bg);
+    line-height: 1.55;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+}
+
+.lang-switcher {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.lang-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+    color: var(--color-ink);
+    outline: none;
+}
+
+.lang-btn.is-active {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.lang-sep {
+    color: var(--color-line);
+    user-select: none;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.5rem 1.5rem 2rem;
+}
+
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 22rem);
+    padding: 2.25rem 2rem 2rem;
+    background-color: var(--color-card);
+    transform: rotate(-1.2deg);
+    border-radius: 3px 5px 4px 6px;
+    outline: 1px solid var(--color-outline);
+    outline-offset: 4px;
+    box-shadow:
+        2px 3px 0 var(--color-shadow),
+        6px 8px 0 var(--color-shadow-deep);
+    text-align: center;
+}
+
+.card-pin {
+    position: absolute;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 46% 54% 50% 50%;
+    background: radial-gradient(circle at 38% 32%, var(--color-pin-light), var(--color-pin) 58%, var(--color-pin-dark));
+    box-shadow:
+        0 1px 1px rgba(74, 100, 78, 0.22),
+        inset -1px -2px 2px rgba(74, 100, 78, 0.18),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+    z-index: 2;
+}
+
+.card-pin--left {
+    top: -0.5rem;
+    left: 1.1rem;
+    transform: rotate(-12deg);
+}
+
+.card-pin--right {
+    top: -0.35rem;
+    right: 1.25rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 52% 48% 54% 46%;
+    background: radial-gradient(circle at 42% 28%, var(--color-pin-right-light), var(--color-pin-right) 62%, var(--color-pin-right-dark));
+    transform: rotate(18deg);
+}
+
+.card-pin--right::before {
+    top: 0.1rem;
+    left: 0.16rem;
+    width: 0.18rem;
+    height: 0.15rem;
+}
+
+.card-pin--right::after {
+    transform: rotate(-6deg);
+    height: 0.4rem;
+}
+
+.card-pin::before {
+    content: "";
+    position: absolute;
+    top: 0.12rem;
+    left: 0.18rem;
+    width: 0.22rem;
+    height: 0.18rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.card-pin::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 1px);
+    width: 2px;
+    height: 0.45rem;
+    margin-left: -1px;
+    background: linear-gradient(to bottom, rgba(74, 100, 78, 0.3), transparent);
+    transform: rotate(4deg);
+}
+
+.profile-photo {
+    order: 1;
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    margin: 0 auto 1.25rem;
+    object-fit: cover;
+    border-radius: 4px 6px 5px 7px;
+    border: 2px solid var(--color-line);
+    box-shadow: 1px 2px 0 var(--color-shadow);
+}
+
+.status {
+    order: 2;
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 2.65rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-ink);
+    transform: rotate(-1deg);
+}
+
+.name {
+    order: 3;
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.occupation {
+    order: 4;
+    margin: 0 0 0.75rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    letter-spacing: 0.01em;
+}
+
+.location {
+    order: 5;
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--color-muted);
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transform: rotate(-1.2deg);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--color-muted);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    color: var(--color-accent);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+@media (max-width: 480px) {
+    .lang-switcher {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem 1.75rem;
+    }
+}
